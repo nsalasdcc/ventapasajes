@@ -32,3 +32,6 @@ class Recorrido(models.Model):
     hora_inicio = models.DateTimeField()
     hora_llegada = models.DateTimeField()
     bus_asignado = models.ForeignKey(Bus)
+
+    def __unicode__(self):
+        return u'%s -- %s\t\tsalida=%s' % (self.origen, self.destino, self.hora_inicio)
