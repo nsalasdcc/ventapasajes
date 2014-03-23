@@ -4,16 +4,25 @@ from django.db import models
 class Ciudad(models.Model):
     nombre = models.CharField(max_length=100, primary_key=True)
 
+    def __unicode__(self):
+        return self.nombre
+
 
 class Conductor(models.Model):
     rut = models.CharField(max_length=12, primary_key=True)
     nombre = models.CharField(max_length=100)
 
+    def __unicode__(self):
+        return u'%s, rut=%s' % (self.nombre, self.rut)
+
 
 class Bus(models.Model):
     patente = models.CharField(max_length=10, primary_key=True)
     capacidad = models.IntegerField()
-    rut_conductor = models.ForeignKey(Conductor)
+    conductor = models.ForeignKey(Conductor)
+
+    def __unicode__(self):
+        return u'patente=%s, capacidad=%s, conducido por %s' % (self.patente, self.capacidad, self.conductor.nombre)
 
 
 class Recorrido(models.Model):
