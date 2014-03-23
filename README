@@ -1,0 +1,16 @@
+VENTA DE PASAJES Buses El Pintor..
+============================================
+
+Este es un proyecto desarrollado por alumnos de la Universidad de Chile
+para el curso de Seguridad de Software.
+
+Se trata de un pequeño módulo web dedicado a las empresas que venden pasajes
+vía oficinas. Más adelante se piensa implementar un módulo de compra
+vía web (y posiblemente móvil)
+
+
+
+================== DATOS TÉCNICOS =====================
+El proyecto está hecho en Django 1.6 corriendo sobre Python 2.7.2.
+Se requiere de una base de datos (Se recomienda MySQL, aunque pueden
+ser otros SGBD).
