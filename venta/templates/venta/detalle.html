@@ -3,5 +3,7 @@
 {% block titulo %}Lista de Recorridos{% endblock %}
 
 {% block content %}
-Viendo recorrido {{ recorrido }}
+    Viendo recorrido {{ recorrido }} <br/>
+    Parte a las {{ recorrido.hora_inicio }} <br/>
+    Este bus tiene {{ capacidad }} asientos.
 {% endblock %}

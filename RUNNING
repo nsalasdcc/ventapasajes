@@ -1,0 +1,48 @@
+Para correr esta aplicación siga estos pasos
+(Asumimos Django 1.6 y Python 2.7 corriendo):
+
+1. Modifique el archivo settings.py en el directorio ventapasajes/
+   para configurar la base de datos que se va a correr. Se recomienda
+   MySQL pero podría ser otra (SQLite, por ejemplo).
+   Se puede encontrar info en https://docs.djangoproject.com/en/dev/ref/databases/
+
+2. Configure la base de datos:
+   $ python manage.py syncdb
+   $ python manage.py sql venta
+
+   Ambos comandos debieran ejecutar sin problemas y poblar la base de datos
+   CON TABLAS.
+
+3. Corra el servidor, ejecute en la consola:
+   $ python manage.py runserver
+   Debería correr bien al tener la db configurada. Note que no habrá ningún dato
+   en las tablas por lo que se debiera ir al módulo de administración y agregar
+   datos: Buses, recorridos, Conductores, etc...
+
+Y eso sería
+
+============================================
+NOTAS PARA LOS DESARROLLADORES:
+
+1. Cuando haga commit (y ESPECIALMENTE PUSH)
+   NO ACTUALICE EL ARCHIVO settings.py!!!!!!!!!!!!!!!!!!!!!!!!!!111
+   Recuerde que distintos desarrolladores pueden trabajar con bases de datos distintas
+   por lo que si ese archivo es pusheado hacia github podría desordenar la forma de
+   trabajo de otra persona
+
+2. Se recomienda el uso del IDE PyCharm (no es obligatorio). Pero viendo que integra
+   highlighting para Django, git, entre otros features parece ideal para usar.
+   http://www.jetbrains.com/pycharm/
+
+3. La instalación local de git se la dejamos a cada uno. En Windows puede ser un poco
+   difícil.
+
+4. La instalación de Django y Python también se la dejamos a cada uno.
+   https://www.djangoproject.com/download/
+   https://www.python.org/download/releases/2.7/
+
+   Note que la instalación de Django y Python (1.6 y 2.7, respectivamente) es más fácil
+   en Linux con el gestor de paquetes (yum, apt-get, pacman, etc...)
+
+5. Un tutorial de Django interesante para ir aprendiendo cómo desarrollar este proyecto:
+   https://docs.djangoproject.com/en/1.6/intro/tutorial01/

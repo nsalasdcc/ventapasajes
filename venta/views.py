@@ -16,9 +16,11 @@ def index(request):
 
 def detalle(request, id_recorrido):
     recorrido = get_object_or_404(Recorrido, id_recorrido=id_recorrido)
+    capacidad = recorrido.bus_asignado.capacidad
 
     context = {
-        'recorrido': recorrido
+        'recorrido': recorrido,
+        'capacidad': capacidad
     }
 
     return render(request, "venta/detalle.html", context)

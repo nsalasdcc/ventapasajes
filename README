@@ -1,16 +1,49 @@
-VENTA DE PASAJES Buses El Pintor..
-============================================
+CC5315 Seguridad de Software
 
-Este es un proyecto desarrollado por alumnos de la Universidad de Chile
-para el curso de Seguridad de Software.
+El grupo está compuesto por
+Nicolás Salas  <nikosalas@gmail.com>
+Rodolfo Ávila  <fito.lord.blader@gmail.com>
+Gabriel Correa <gabcorrea@gmail.com>
 
-Se trata de un pequeño módulo web dedicado a las empresas que venden pasajes
-vía oficinas. Más adelante se piensa implementar un módulo de compra
-vía web (y posiblemente móvil)
+Proyecto Buses El Pintor
+
+Este proyecto trata de emular el proceso de negocios de una empresa
+nacional de Buses. El objetivo es implementar un módulo de ventas
+interno, un módulo de ventas externo y un módulo de administración
+de la aplicación. De modo que el proceso de, por ejemplo, asignación
+de buses para un recorrido o la venta de pasajes via ventanilla o
+internet se pueda hacer de forma rápida y confiable.
+
+Un futuro proyecto podría ser una aplicación web móvil que permita
+revisar asientos en un recorrido deseado y eventualmente comprar el
+pasaje. La meta en primer lugar es implementar los tres módulos web
+antes descritos.
 
 
+===
+El proyecto se hará usando el framework para desarrollo web Django en
+python.
 
-================== DATOS TÉCNICOS =====================
-El proyecto está hecho en Django 1.6 corriendo sobre Python 2.7.2.
-Se requiere de una base de datos (Se recomienda MySQL, aunque pueden
-ser otros SGBD).
+Django 1.6
+Python 2.7
+
+Y puede haber algunas otras tecnologías usadas en la web dependiendo
+del tiempo disponible. Algunas de estas tecnologías son
+
+- Bootstrap (framework CSS)
+- jQuery
+- Handlebars.js
+- Less.js
+
+Lo esencial, aún así, queda en Django.
+
+Se hará uso además de git para manejar el trabajo en grupo.
+El proyecto se encontrará disponible en el siguiente repositorio de github:
+https://github.com/cc5315nsalas/ventapasajes
+
+Adicionalmente, el proyecto requiere de una base de datos para poder
+ser utilizado. Como grupo recomendamos usar cualquier implementación
+de MySQL (ya sea por Oracle, MariaDB, o a elección).
+
+======
+Para ver cómo usar esta aplicación refiérase al archivo "RUNNING"
