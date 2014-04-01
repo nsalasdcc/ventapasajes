@@ -3,7 +3,36 @@
 {% block titulo %}Lista de Recorridos{% endblock %}
 
 {% block content %}
-    Viendo recorrido {{ recorrido }} <br/>
-    Parte a las {{ recorrido.hora_inicio }} <br/>
-    Este bus tiene {{ capacidad }} asientos.
+<h1>
+    Recorrido {{ recorrido.origen }} -- {{ recorrido.destino }}
+    <small>Salida {{ recorrido.hora_inicio.date }} a las {{ recorrido.hora_inicio.hour }}:{{ recorrido.hora_inicio.minute }}</small>
+</h1>
+
+<p>Haga clic en un asiento para vender</p>
+
+<div class="well well-sm">
+<div class="row">
+    <div class="col-xs-3 col-xs-offset-3">
+
+        {% for asiento in asientos_par %}
+            {% with vendido=pasajes.asiento.vendido  %}
+            <button type="button" class="btn btn-lg btn-primary"{% if not vendido %} disabled{% endif %}>{{ asiento }}</button>
+            {% if asiento|divisibleby:"2" %}
+                <br/>
+            {% endif %}
+            {% endwith %}
+        {% endfor %}
+    </div>
+    <div class="col-xs-3">
+        {% for asiento in asientos_impar %}
+            <button type="button" class="btn btn-lg btn-primary">{{ asiento }}</button>
+            {% if asiento|divisibleby:"4"%}
+                <br/>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+</ul>
+</div>
 {% endblock %}

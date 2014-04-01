@@ -31,7 +31,20 @@ class Recorrido(models.Model):
     destino = models.ForeignKey(Ciudad, related_name='ciudad_destino')
     hora_inicio = models.DateTimeField()
     hora_llegada = models.DateTimeField()
-    bus_asignado = models.ForeignKey(Bus)
+    bus_asignado = models.ForeignKey(Bus, blank=True, null=True)
+    pasajes_vendidos = models.IntegerField()
 
     def __unicode__(self):
         return u'%s -- %s\t\tsalida=%s' % (self.origen, self.destino, self.hora_inicio)
+
+    def max_capacidad(self):
+        return self.bus_asignado.capacidad if self.bus_asignado is not None else 0
+
+    max_capacidad = property(max_capacidad)
+
+
+class Pasaje(models.Model):
+    id_pasaje = models.AutoField(primary_key=True)
+    asiento = models.IntegerField(null=True)
+    vendido = models.BooleanField(default=False)
+    recorrido = models.ForeignKey(Recorrido)
