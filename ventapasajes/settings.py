@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'venta',
+    'compra'
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,12 +59,8 @@ WSGI_APPLICATION = 'ventapasajes.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'ventapasajes_devel',
-        'USER': 'root',
-        'PASSWORD': '1',
-        'HOST': 'localhost',
-        'PORT': '3306',
     }
 }
 
