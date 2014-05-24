@@ -22,3 +22,7 @@ def detalle(request, id_recorrido):
     }
 
     return render(request, "venta/detalle.html", context)
+
+
+def buscar(request):
+    return render(request, "venta/buscar.html")
