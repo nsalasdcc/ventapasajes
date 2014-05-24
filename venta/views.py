@@ -1,17 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from django.template import loader, RequestContext
 from venta.models import Recorrido
 
 
 def index(request):
-    lista_recorridos = Recorrido.objects.all()
-
-    context = {
-        'lista_recorridos': lista_recorridos
-    }
-
-    return render(request, "venta/index.html", context)
+    return render(request, "venta/index.html")
 
 
 def detalle(request, id_recorrido):
@@ -25,4 +17,12 @@ def detalle(request, id_recorrido):
 
 
 def buscar(request):
-    return render(request, "venta/buscar.html")
+    origen = request.GET.get("origen", "")
+    destino = request.GET.get("destino", "")
+
+    lista_recorridos = Recorrido.objects.filter(origen__nombre__contains=origen).\
+        filter(destino__nombre__contains=destino)
+
+    ctx = {'lista_recorridos': lista_recorridos}
+
+    return render(request, "venta/buscar.html", ctx)
