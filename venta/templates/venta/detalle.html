@@ -3,5 +3,19 @@
 {% block titulo %}Lista de Recorridos{% endblock %}
 
 {% block content %}
-Viendo recorrido {{ recorrido }}
+    <h1>{{ recorrido.origen }} - {{ recorrido.destino }}<br/>
+        Salida {{ recorrido.hora_inicio|date:"l, j F H:i" }}</h1>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="well bs-component">
+                {% for asiento in asientos %}
+                    <button type="button" class="btn btn-primary btn-lg" onclick="location.href='{% url 'confirmar' recorrido.id_recorrido asiento.asiento %}'">
+                        {{ asiento.asiento }}
+                    </button><br/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
