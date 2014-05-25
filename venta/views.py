@@ -1,4 +1,7 @@
 from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
+from django.db import IntegrityError
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from venta.models import Recorrido, Pasaje
 
@@ -43,3 +46,23 @@ def confirmar(request, id_recorrido, id_asiento):
         'asiento': asiento,
     }
     return render(request, "venta/confirmar.html", ctx)
+
+
+def vender(request, id_pasaje):
+    try:
+        pasaje = Pasaje.objects.get(id=id_pasaje)
+        if pasaje.vendido:
+            raise IntegrityError('Pasaje ya vendido')
+        pasaje.vendido = True
+
+        pasaje.save()
+
+        success_msg = "Pasaje vendido Exitosamente."
+
+        #TODO: introducir mensaje de exito
+        redirect = HttpResponseRedirect(reverse('detalle', args=(pasaje.recorrido.id_recorrido,)))
+        return redirect
+
+    except IntegrityError:
+        #TODO: Vista incorrecta!
+        return render(request, "venta/confirmar.html")
