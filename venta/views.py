@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
@@ -66,3 +67,43 @@ def vender(request, id_pasaje):
     except IntegrityError:
         #TODO: Vista incorrecta!
         return render(request, "venta/confirmar.html")
+
+
+def cambiar(request):
+    return render(request, "venta/cambiar.html")
+
+
+def devolver(request):
+    return render(request, "venta/devolver.html")
+
+
+def devolucion(request):
+    id_pasaje = request.GET.get("id", "")
+
+    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+
+    if not pasaje.vendido:
+        raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
+
+    recorrido = pasaje.recorrido
+    ctx = {
+        'asiento': pasaje,
+        'recorrido': recorrido
+        }
+
+    return render(request, "venta/devolucion.html", ctx)
+
+
+def do_devolver(request, id_pasaje):
+    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+
+    if not pasaje.vendido:
+        raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
+    pasaje.vendido = False
+
+    pasaje.save()
+
+    messages.success(request, "Pasaje cambiado exitosamente")
+    redirect = HttpResponseRedirect(reverse('index'))
+
+    return redirect

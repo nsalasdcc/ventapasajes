@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{% static 'venta/css/estilos-static.css' %}"/>
 </head>
 <body>
+{% block css %}{% endblock %}
 
 <div class="container">
     <div class="navbar navbar-inverse">
@@ -19,19 +20,25 @@
         </div>
         <div class="navbar-collapse collapse navbar-inverse-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="{% url 'index' %}">Buscar Recorridos</a></li>
-                <li><a href="#">Link</a></li>
+                <li><a href="{% url 'index' %}">Buscar Recorridos</a></li>
+                <li><a href="{% url 'cambiar' %}">Cambiar Pasaje</a></li>
+                <li><a href="{% url 'devolver' %}">Devolución de Pasajes</a></li>
                 </li>
             </ul>
         </div>
     </div>
 
-{% if success_msg %}
-<div class="alert alert-dismissable alert-success">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  {{ success_msg }}
-</div>
-{% endif %}
+    {% if messages %}
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 
 
     {% block content %}{% endblock %}

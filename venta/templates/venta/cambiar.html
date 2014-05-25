@@ -1,0 +1,38 @@
+{% extends 'venta/main.html' %}
+
+{% block titulo %}Lista de Recorridos{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <div class="well bs-component">
+                <form class="form-horizontal" action="{% url 'buscar' %}" method="get">
+                    <fieldset>
+                        <legend>Búsqueda de Pasajes</legend>
+                        <div class="form-group">
+                            <label for="inputOrigen" class="col-lg-2 control-label">Origen</label>
+
+                            <div class="col-lg-10">
+                                <input type="text" name="origen" class="form-control" id="inputOrigen" placeholder="Ciudad de Origen">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDestino" class="col-lg-2 control-label">Destino</label>
+
+                            <div class="col-lg-10">
+                                <input type="text" name="destino" class="form-control" id="inputDestino"
+                                       placeholder="Ciudad de Destino">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button class="btn btn-default">Cancelar</button>
+                                <button type="submit" class="btn btn-primary">Buscar Recorridos</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
