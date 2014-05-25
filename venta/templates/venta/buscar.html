@@ -1,0 +1,16 @@
+{% extends 'venta/main.html' %}
+
+{% block titulo %}Lista de Recorridos{% endblock %}
+
+{% block content %}
+{% if lista_recorridos %}
+<ul>
+    {% for recorrido in lista_recorridos %}
+    <li><a href="{% url 'detalle' recorrido.id_recorrido %}">{{ recorrido }}</a></li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>No hay recorridos</p>
+{% endif %}
+{% endblock %}

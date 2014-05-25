@@ -19,10 +19,10 @@ class Conductor(models.Model):
 class Bus(models.Model):
     patente = models.CharField(max_length=10, primary_key=True)
     capacidad = models.IntegerField()
-    conductor = models.ForeignKey(Conductor)
+    conductor = models.ForeignKey(Conductor, null=True)
 
     def __unicode__(self):
-        return u'patente=%s, capacidad=%s, conducido por %s' % (self.patente, self.capacidad, self.conductor.nombre)
+        return u'patente=%s, capacidad=%s, conducido por %s' % (self.patente, self.capacidad, self.conductor.nombre if self.conductor else "Nadie")
 
 
 class Recorrido(models.Model):
@@ -31,7 +31,14 @@ class Recorrido(models.Model):
     destino = models.ForeignKey(Ciudad, related_name='ciudad_destino')
     hora_inicio = models.DateTimeField()
     hora_llegada = models.DateTimeField()
-    bus_asignado = models.ForeignKey(Bus, null=True)
+    bus_asignado = models.ForeignKey(Bus, null=True, blank=True)
 
     def __unicode__(self):
         return u'%s -- %s\t\tsalida=%s' % (self.origen, self.destino, self.hora_inicio)
+
+
+class Pasaje(models.Model):
+    recorrido = models.ForeignKey(Recorrido)
+    asiento = models.IntegerField()
+    precio = models.IntegerField()
+    vendido = models.BooleanField()

@@ -3,5 +3,33 @@
 {% block titulo %}Lista de Recorridos{% endblock %}
 
 {% block content %}
-Viendo recorrido {{ recorrido }}
+    <h1>{{ recorrido.origen }} - {{ recorrido.destino }}<br/>
+        Salida {{ recorrido.hora_inicio|date:"l, j F H:i" }}</h1>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="well bs-component">
+                <p>Seleccione el asiento a vender</p>
+
+                {% for asiento in asientos %}
+                    {% with primero=forloop.counter|add:"3"|divisibleby:"4" ultimo=forloop.counter|divisibleby:"4" %}
+                        {% if primero %}
+                            <div class="row">
+                        {% endif %}
+                    <div class="col-lg-1{% if primero %} col-lg-offset-4{% endif %}">
+                        <button type="button"
+                                class="btn btn-primary btn-lg{% if asiento.vendido %} disabled{% endif %}"
+                                onclick="location.href='{% url 'confirmar' recorrido.id_recorrido asiento.id %}'">
+                            {{ asiento.asiento }}
+                        </button>
+                    </div>
+                    {% if ultimo %}
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

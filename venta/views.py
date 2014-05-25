@@ -1,24 +1,109 @@
+from django.contrib import messages
+from django.core.exceptions import ValidationError
+from django.core.urlresolvers import reverse
+from django.db import IntegrityError
+from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from django.template import loader, RequestContext
-from venta.models import Recorrido
+from venta.models import Recorrido, Pasaje
 
 
 def index(request):
-    lista_recorridos = Recorrido.objects.all()
-
-    context = {
-        'lista_recorridos': lista_recorridos
-    }
-
-    return render(request, "venta/index.html", context)
+    return render(request, "venta/index.html")
 
 
 def detalle(request, id_recorrido):
     recorrido = get_object_or_404(Recorrido, id_recorrido=id_recorrido)
+    pasajes = recorrido.pasaje_set.all()
 
     context = {
-        'recorrido': recorrido
+        'recorrido': recorrido,
+        'asientos': pasajes,
     }
 
     return render(request, "venta/detalle.html", context)
+
+
+def buscar(request):
+    origen = request.GET.get("origen", "")
+    destino = request.GET.get("destino", "")
+
+    lista_recorridos = Recorrido.objects.filter(origen__nombre__contains=origen).\
+        filter(destino__nombre__contains=destino)
+
+    ctx = {'lista_recorridos': lista_recorridos}
+
+    return render(request, "venta/buscar.html", ctx)
+
+
+def confirmar(request, id_recorrido, id_asiento):
+    recorrido = Recorrido.objects.get(id_recorrido=id_recorrido)
+    asiento = Pasaje.objects.get(id=id_asiento)
+
+    if asiento.recorrido_id != recorrido.id_recorrido:
+        raise ValidationError('Invalid value: %s' % id_asiento)
+
+    ctx = {
+        'recorrido': recorrido,
+        'asiento': asiento,
+    }
+    return render(request, "venta/confirmar.html", ctx)
+
+
+def vender(request, id_pasaje):
+    try:
+        pasaje = Pasaje.objects.get(id=id_pasaje)
+        if pasaje.vendido:
+            raise IntegrityError('Pasaje ya vendido')
+        pasaje.vendido = True
+
+        pasaje.save()
+
+        success_msg = "Pasaje vendido Exitosamente."
+
+        #TODO: introducir mensaje de exito
+        redirect = HttpResponseRedirect(reverse('detalle', args=(pasaje.recorrido.id_recorrido,)))
+        return redirect
+
+    except IntegrityError:
+        #TODO: Vista incorrecta!
+        return render(request, "venta/confirmar.html")
+
+
+def cambiar(request):
+    return render(request, "venta/cambiar.html")
+
+
+def devolver(request):
+    return render(request, "venta/devolver.html")
+
+
+def devolucion(request):
+    id_pasaje = request.GET.get("id", "")
+
+    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+
+    if not pasaje.vendido:
+        raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
+
+    recorrido = pasaje.recorrido
+    ctx = {
+        'asiento': pasaje,
+        'recorrido': recorrido
+        }
+
+    return render(request, "venta/devolucion.html", ctx)
+
+
+def do_devolver(request, id_pasaje):
+    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+
+    if not pasaje.vendido:
+        raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
+    pasaje.vendido = False
+
+    pasaje.save()
+
+    messages.success(request, "Pasaje cambiado exitosamente")
+    redirect = HttpResponseRedirect(reverse('index'))
+
+    return redirect
