@@ -4,6 +4,9 @@ from django.core.urlresolvers import reverse
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
+from reportlab.lib.pagesizes import letter
 from venta.models import Recorrido, Pasaje
 
 
@@ -58,11 +61,32 @@ def vender(request, id_pasaje):
 
         pasaje.save()
 
-        success_msg = "Pasaje vendido Exitosamente."
+        success_msg = "Pasaje comprado Exitosamente."
 
         #TODO: introducir mensaje de exito
-        redirect = HttpResponseRedirect(reverse('detalle', args=(pasaje.recorrido.id_recorrido,)))
+        redirect = HttpResponse(mimetype='application/pdf')
+        redirect['Content-Disposition'] = 'attachment; filename=boleto.pdf'
+        p = canvas.Canvas(redirect)
+        w, h = letter
+        p.drawString(100,h-50, "Buses El Pintor")
+        p.drawString(100,h-80, "Detalles de su Pasaje:")
+        p.drawString(100,h-110,"Origen:")
+        p.drawString(100+150,h-110, str(pasaje.recorrido.origen))
+        p.drawString(100,h-140,"Hora salida:")
+        p.drawString(100+150,h-140,str(pasaje.recorrido.hora_inicio))
+        p.drawString(100,h-170,"Destino:")
+        p.drawString(100+150,h-170,str(pasaje.recorrido.destino))
+        p.drawString(100,h-200,"Hora llegada:")
+        p.drawString(100+150,h-200,str(pasaje.recorrido.hora_llegada))
+        p.drawString(100,h-230,"Bus asignado:")
+        p.drawString(100+150,h-230,str(pasaje.recorrido.bus_asignado.patente))
+        p.drawString(100,h-260,"Asiento")
+        p.drawString(100+150,h-260,str(pasaje.asiento))
+        p.drawString(100,h-350,"Gracias por preferirnos!")
+        p.drawString(100,h-370,"Disfrute su viaje!")
+        p.save()
         return redirect
+
 
     except IntegrityError:
         #TODO: Vista incorrecta!
