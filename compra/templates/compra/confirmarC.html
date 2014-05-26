@@ -1,0 +1,59 @@
+{% extends 'compra/mainC.html' %}
+
+{% block titulo %}Lista de Recorridos{% endblock %}
+
+{% block content %}
+    <h1>Compra de Pasaje</h1>
+
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2">
+            <div class="well bs-component">
+                <form class="form-horizontal" action="{% url 'comprar' asiento.id %}">
+                    <h4 class="text-center">Buses El Pintor</h4>
+
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Origen</label>
+
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ recorrido.origen }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Destino</label>
+
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ recorrido.destino }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Horario de Salida</label>
+
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ recorrido.hora_inicio }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Horario de Llegada</label>
+
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ recorrido.hora_llegada }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-2 control-label">Asiento</label>
+
+                        <div class="col-lg-10">
+                            <p class="form-control-static">{{ asiento.asiento }}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary">Confirmar Compra</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

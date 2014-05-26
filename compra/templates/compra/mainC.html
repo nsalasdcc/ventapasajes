@@ -1,0 +1,46 @@
+{% load staticfiles %}<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block titulo %}Venta de pasajes El Pintor{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'compra/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" href="{% static 'compra/css/estilos-static.css' %}"/>
+</head>
+<body>
+{% block css %}{% endblock %}
+
+<div class="container">
+    <div class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{% url 'index' %}">Buses El Pintor</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-inverse-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'index' %}">Buscar Recorridos</a></li>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    {% if messages %}
+        <div class="alert alert-dismissable alert-success">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+
+            <ul class="messages">
+                {% for message in messages %}
+                    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+
+
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
