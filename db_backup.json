@@ -1,1 +1,1164 @@
-[{"pk": 1, "model": "contenttypes.contenttype", "fields": {"model": "logentry", "name": "log entry", "app_label": "admin"}}, {"pk": 2, "model": "contenttypes.contenttype", "fields": {"model": "permission", "name": "permission", "app_label": "auth"}}, {"pk": 3, "model": "contenttypes.contenttype", "fields": {"model": "group", "name": "group", "app_label": "auth"}}, {"pk": 4, "model": "contenttypes.contenttype", "fields": {"model": "user", "name": "user", "app_label": "auth"}}, {"pk": 5, "model": "contenttypes.contenttype", "fields": {"model": "contenttype", "name": "content type", "app_label": "contenttypes"}}, {"pk": 6, "model": "contenttypes.contenttype", "fields": {"model": "session", "name": "session", "app_label": "sessions"}}, {"pk": 7, "model": "contenttypes.contenttype", "fields": {"model": "ciudad", "name": "ciudad", "app_label": "venta"}}, {"pk": 8, "model": "contenttypes.contenttype", "fields": {"model": "conductor", "name": "conductor", "app_label": "venta"}}, {"pk": 9, "model": "contenttypes.contenttype", "fields": {"model": "bus", "name": "bus", "app_label": "venta"}}, {"pk": 10, "model": "contenttypes.contenttype", "fields": {"model": "recorrido", "name": "recorrido", "app_label": "venta"}}, {"pk": 11, "model": "contenttypes.contenttype", "fields": {"model": "pasaje", "name": "pasaje", "app_label": "venta"}}, {"pk": "Antofagasta", "model": "venta.ciudad", "fields": {}}, {"pk": "Arica", "model": "venta.ciudad", "fields": {}}, {"pk": "Calama", "model": "venta.ciudad", "fields": {}}, {"pk": "Chillan", "model": "venta.ciudad", "fields": {}}, {"pk": "Concepcion", "model": "venta.ciudad", "fields": {}}, {"pk": "Copiapo", "model": "venta.ciudad", "fields": {}}, {"pk": "Coquimbo", "model": "venta.ciudad", "fields": {}}, {"pk": "La serena", "model": "venta.ciudad", "fields": {}}, {"pk": "Linares", "model": "venta.ciudad", "fields": {}}, {"pk": "Los vilos", "model": "venta.ciudad", "fields": {}}, {"pk": "Osorno", "model": "venta.ciudad", "fields": {}}, {"pk": "Temuco", "model": "venta.ciudad", "fields": {}}, {"pk": "Valdivia", "model": "venta.ciudad", "fields": {}}, {"pk": "Vallenar", "model": "venta.ciudad", "fields": {}}, {"pk": "rancagua", "model": "venta.ciudad", "fields": {}}, {"pk": "stgo", "model": "venta.ciudad", "fields": {}}, {"pk": "talca", "model": "venta.ciudad", "fields": {}}, {"pk": "10456253-8", "model": "venta.conductor", "fields": {"nombre": "jaime"}}, {"pk": "11974275-9", "model": "venta.conductor", "fields": {"nombre": "brayatan"}}, {"pk": "1234567-3", "model": "venta.conductor", "fields": {"nombre": "pepe"}}, {"pk": "1246930-3", "model": "venta.conductor", "fields": {"nombre": "jose"}}, {"pk": "4578902-4", "model": "venta.conductor", "fields": {"nombre": "pablo"}}, {"pk": "9632347-7", "model": "venta.conductor", "fields": {"nombre": "roberto"}}, {"pk": "BHDE-03", "model": "venta.bus", "fields": {"capacidad": 42, "conductor": null}}, {"pk": "BSJX-43", "model": "venta.bus", "fields": {"capacidad": 23, "conductor": "1234567-3"}}, {"pk": "BVVPW-29", "model": "venta.bus", "fields": {"capacidad": 41, "conductor": null}}, {"pk": "FCLF-63", "model": "venta.bus", "fields": {"capacidad": 42, "conductor": null}}, {"pk": "GHJT-76", "model": "venta.bus", "fields": {"capacidad": 40, "conductor": null}}, {"pk": "HOLA-44", "model": "venta.bus", "fields": {"capacidad": 40, "conductor": null}}, {"pk": "MSLA-75", "model": "venta.bus", "fields": {"capacidad": 40, "conductor": null}}, {"pk": 1, "model": "venta.recorrido", "fields": {"hora_inicio": "2014-07-07T01:44:10Z", "destino": "talca", "origen": "stgo", "bus_asignado": "BSJX-43", "hora_llegada": "2014-07-08T01:44:11Z"}}, {"pk": 2, "model": "venta.recorrido", "fields": {"hora_inicio": "2014-07-07T01:44:24Z", "destino": "stgo", "origen": "talca", "bus_asignado": "BSJX-43", "hora_llegada": "2014-07-08T01:44:25Z"}}, {"pk": 3, "model": "venta.recorrido", "fields": {"hora_inicio": "2014-07-07T03:11:06Z", "destino": "Chillan", "origen": "Osorno", "bus_asignado": "HOLA-44", "hora_llegada": "2014-07-08T03:11:08Z"}}, {"pk": 1, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 1, "vendido": true, "precio": 10000, "sid": "26f52aa449a1d0e5631f0fcc6a47d31956f5db5a69b492ef3d072578c7484bf4"}}, {"pk": 2, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 2, "vendido": false, "precio": 10000, "sid": "65844b9d71e46fc71951e7d8084ff7ae635aa8dd31da27fb86f01dfdf4a6b022"}}, {"pk": 3, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 3, "vendido": true, "precio": 10000, "sid": "7ed26155c83291fa9097c7ce2c234811cf47083e9d2ef5f700a4c1813a1869d2"}}, {"pk": 4, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 4, "vendido": false, "precio": 10000, "sid": "048b5191aa23827e425fbe6515d0c076dc51c599eff804403c87dc2aec04c3c9"}}, {"pk": 5, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 5, "vendido": false, "precio": 10000, "sid": "8d5e28504f4e9d32ecc1ea300cf0a5a70437db05f4929c58e603eb7c73bef248"}}, {"pk": 6, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 6, "vendido": false, "precio": 10000, "sid": "091fe7855616a7aa1b5579ae1aac83774caea54406aaa476b0336d5cf65dcab6"}}, {"pk": 7, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 7, "vendido": false, "precio": 10000, "sid": "abf5e72ec60e4904ec7f76dbd123ddca80c00e074bbd4cedf53d8bfcdc2208a9"}}, {"pk": 8, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 8, "vendido": false, "precio": 10000, "sid": "5139e0dda65fed63c64d663c7231580b1474617ef48f5b377bf3c4d8aaa031f3"}}, {"pk": 9, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 9, "vendido": false, "precio": 10000, "sid": "804bd814798a4ea198859c875047883ff5e6c70efbb2a35c5ab137e65dc63c66"}}, {"pk": 10, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 10, "vendido": false, "precio": 10000, "sid": "fac0e93c73be66e783c6af1d7ac98462217af26f68f7c3ac2d8d98208e40c7be"}}, {"pk": 11, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 11, "vendido": false, "precio": 10000, "sid": "75e0d360ea2193a38d7eeb554547525c3c2d2d44db0d159cad2fb1b0c35c84c5"}}, {"pk": 12, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 12, "vendido": false, "precio": 10000, "sid": "48b87c9f3b591107b358f43ce6565b0520a63bec3c3a1e3b1681904dfd946063"}}, {"pk": 13, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 13, "vendido": false, "precio": 10000, "sid": "77f837f7eebe4d65c54d5e92f724cdb303e40168b7b861acf1673a0b42f3afca"}}, {"pk": 14, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 14, "vendido": false, "precio": 10000, "sid": "05781cecda8cf77edf6152185cb75c9bee5e0311d4695727a15e0c56a5ebf097"}}, {"pk": 15, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 15, "vendido": true, "precio": 10000, "sid": "3102ac102b91f3296ff7ceeefe154ede1ffcd518500f39e90c9d4a500f9df362"}}, {"pk": 16, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 16, "vendido": false, "precio": 10000, "sid": "ce3af59b6075cbc6ebf97ead2281dff3af1fae645790473074b76a34252dcccc"}}, {"pk": 17, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 17, "vendido": false, "precio": 10000, "sid": "1d41ca7a35194fcca11007566e855152cec87b274d19157eff0c6365ffb65c20"}}, {"pk": 18, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 18, "vendido": false, "precio": 10000, "sid": "d219dfd6c7f80b046765924c2e5446f74e6086ddf8b4961df50ab2a6b4496f6b"}}, {"pk": 19, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 19, "vendido": false, "precio": 10000, "sid": "453eef40c2c50f20f89fe30ae4b280f4bac2487b61eea9950977e593eb914d75"}}, {"pk": 20, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 20, "vendido": false, "precio": 10000, "sid": "4f22c6c6622a0ba4ca30d0d2c108907e5b1a83ad1247ea4454f3f0cda8076f0a"}}, {"pk": 21, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 21, "vendido": false, "precio": 10000, "sid": "2b17756db629d98499d61eafdcbae6e4ddb6552c41cbfdab5dc2bbfbd4de19c2"}}, {"pk": 22, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 22, "vendido": false, "precio": 10000, "sid": "57917e84e27c4a1c2497e4e09ad7d757db121e4941e60853010eb173bdf45df3"}}, {"pk": 23, "model": "venta.pasaje", "fields": {"recorrido": 1, "asiento": 23, "vendido": false, "precio": 10000, "sid": "21397806a88cfed559ba2e3e8c352b4935709229485f9f2dd4291f8b25c3986f"}}, {"pk": 24, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 1, "vendido": false, "precio": 10000, "sid": "7084c4ab9302c8bb832da962dc31c9a798d64b9bea368b9ac4631fc46b025dc6"}}, {"pk": 25, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 2, "vendido": false, "precio": 10000, "sid": "50e23c12c6ccfaaee8435f02314747b80ed7b094f8787fcb06fc9a4dcb630b46"}}, {"pk": 26, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 3, "vendido": false, "precio": 10000, "sid": "ba6f96765282e86db86b1bb7ad9d0063b9a2b8914abe107bf5a1e8b3e9376fa3"}}, {"pk": 27, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 4, "vendido": false, "precio": 10000, "sid": "46ef9fa05a408e12c5c80861e04a8dc6ca22b5554246da8c56594bc80386aefa"}}, {"pk": 28, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 5, "vendido": false, "precio": 10000, "sid": "ba3da7fa502b5eaa1730ea68b8ac00bc2f5fd1ebf7f2ef8d4ef4800ab3a1c26e"}}, {"pk": 29, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 6, "vendido": false, "precio": 10000, "sid": "401b077b2e9bf524416995ec436d0f8d54cbd6e38eb505c909f4e2a4e8cafa22"}}, {"pk": 30, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 7, "vendido": false, "precio": 10000, "sid": "d018aba1f373f373cdb27a777956afc4a4a96a61aa5d93a92463f76240c6330e"}}, {"pk": 31, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 8, "vendido": false, "precio": 10000, "sid": "c2f4a2ceb143dcf52d641bb7c6a84db89a424ade83737a272e9bdb829f448e69"}}, {"pk": 32, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 9, "vendido": false, "precio": 10000, "sid": "c609f430939ae246ac69845e3787a4fc72e871981d264b3fc6a812c054202a3d"}}, {"pk": 33, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 10, "vendido": false, "precio": 10000, "sid": "5bf27c229e326d7d32cabb6bbd415cf2a12ede9ce48541d5fa83d9340424b8eb"}}, {"pk": 34, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 11, "vendido": true, "precio": 10000, "sid": "52d155c0e37f501fffb515243cddaa736378c362302ffe51e0b6fb87de845357"}}, {"pk": 35, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 12, "vendido": false, "precio": 10000, "sid": "0db3f82c4b27f244fcbe58580eba7ca85056340870c1224513a3afad781d759a"}}, {"pk": 36, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 13, "vendido": false, "precio": 10000, "sid": "1d6faa657e9a7373f9a68bde1fc94b92756c1f4e3bc526fc583f6c0d9e260708"}}, {"pk": 37, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 14, "vendido": false, "precio": 10000, "sid": "b51d648b5c682a17d7f09775dac6ccaaeba0bdf44311aab75ac0ef8c188ad6c9"}}, {"pk": 38, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 15, "vendido": false, "precio": 10000, "sid": "b19bcaad5dda80fc2e67cca154d83676e4e4df38feea797ead8e8dde5d53bb91"}}, {"pk": 39, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 16, "vendido": false, "precio": 10000, "sid": "5692f7670d7a58d1973788ee2c2d1041d860e41b209f9f26b4c8095828ad8f51"}}, {"pk": 40, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 17, "vendido": false, "precio": 10000, "sid": "52568265019067c1b3765709989a2d2ef0721dd4d6e8166140cbc2deac9efc45"}}, {"pk": 41, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 18, "vendido": false, "precio": 10000, "sid": "e638eec7f0a8b6c248f3702b20348409c3eae76c0fc1a23ba86e294302a80120"}}, {"pk": 42, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 19, "vendido": false, "precio": 10000, "sid": "8a8b9733af53927cb1e20a83ed5d1efcaa02c34262af6bf5926831bfa45bc54c"}}, {"pk": 43, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 20, "vendido": false, "precio": 10000, "sid": "55f981e4088495ab9c7d180edc03522afa5ea342d3eb6753f6d538fc847199d3"}}, {"pk": 44, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 21, "vendido": false, "precio": 10000, "sid": "79828a56111f4cc4f717b1b5c1ca3af999d3ff77b5c6423ab18fb7b0af6fd771"}}, {"pk": 45, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 22, "vendido": false, "precio": 10000, "sid": "13e5d99c7bfbe172dedcbc0af73183b479a135343f382d1e66b370a529759e21"}}, {"pk": 46, "model": "venta.pasaje", "fields": {"recorrido": 2, "asiento": 23, "vendido": false, "precio": 10000, "sid": "9705172e3e495c14b523e6175adac1855014ff3f73f0bd3e8b4f3084cc37a1a9"}}, {"pk": 47, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 1, "vendido": false, "precio": 10000, "sid": "4e572c21aeae4082ccca97a39d1f2be91b231fe74d9d81debf44606f81306368"}}, {"pk": 48, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 2, "vendido": false, "precio": 10000, "sid": "b4405b222fa98570a15f6fb6263494b5e70a74b37456ec6752020a82cd1d960e"}}, {"pk": 49, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 3, "vendido": false, "precio": 10000, "sid": "e6ff53a21a2b5e6d4b88b95a1153604e2e8aef0f4afa0141a52c5a9c6f8582f6"}}, {"pk": 50, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 4, "vendido": false, "precio": 10000, "sid": "cf308c24c44d90c73184cfefad5fd7b968b10727cd32e56563479b149ede7877"}}, {"pk": 51, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 5, "vendido": false, "precio": 10000, "sid": "6ab56f24c06a85e47e08884f9053278d78257da46308a00a9d719f424d1d454b"}}, {"pk": 52, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 6, "vendido": false, "precio": 10000, "sid": "68cd6ed8e27f9ff9bf4e5c7d743a36277784f061e38742ba5d65f669e7917d53"}}, {"pk": 53, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 7, "vendido": false, "precio": 10000, "sid": "471a58b5515a1c025a3554f482a13edd3bbeb109eaa562af2f9c0ee92223b81c"}}, {"pk": 54, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 8, "vendido": false, "precio": 10000, "sid": "aa0a6c344f4e282489fdd047f098e9b93efdb6cee370a81fc7d11dd7bf732a39"}}, {"pk": 55, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 9, "vendido": false, "precio": 10000, "sid": "60356bc428857f371a46b4e9e8b3ad38302fe77e366dad7df5e50dd132ffef8a"}}, {"pk": 56, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 10, "vendido": false, "precio": 10000, "sid": "59e69d380852aa2752d55ac99a7ef637c5a76b3b42450396126783e8478017a4"}}, {"pk": 57, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 11, "vendido": false, "precio": 10000, "sid": "6038bc866d70975750f24d01ee307f83d2611ff9070a52c143adaff96b51db10"}}, {"pk": 58, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 12, "vendido": false, "precio": 10000, "sid": "1d022e04184ac6ffdec7a414aeded3dde95ff03867b2a33829f86eb5ccab22d9"}}, {"pk": 59, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 13, "vendido": false, "precio": 10000, "sid": "7f3c79b385484f4a5a57a3129e08cfdc428806c7de30d128c8fc19f83f3c4c49"}}, {"pk": 60, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 14, "vendido": false, "precio": 10000, "sid": "bb9c20e9d1bda5eb498aa2700ce80ab90820aa07e692fb5aaecbd65968770e9d"}}, {"pk": 61, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 15, "vendido": false, "precio": 10000, "sid": "f30edb3bdd4ee62f4922dcfe6b9dbd8b80e71aac7d26e6b8cb27894c14c0f103"}}, {"pk": 62, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 16, "vendido": false, "precio": 10000, "sid": "48e109c4fe164b393a6c33f515e531a2c67eb19305133f70584c9e776bd34688"}}, {"pk": 63, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 17, "vendido": false, "precio": 10000, "sid": "86477a394ad6c10dec65caca5f85b945ab8894209fd56f6beef90ca3c451ce0d"}}, {"pk": 64, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 18, "vendido": false, "precio": 10000, "sid": "cd96bbd1fc49988bfcfa5ca07cdf839130044b32c26d57ced1b2d8a631e4bafa"}}, {"pk": 65, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 19, "vendido": false, "precio": 10000, "sid": "b65e1b0dba182ff0a609fe8b7e31b58bd981836dbc94f523a7b1dd9ca7a2a913"}}, {"pk": 66, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 20, "vendido": false, "precio": 10000, "sid": "a97fcf209fe8bac65eab8e61559cc330bd947377f40458745d0c28e03be8c3fd"}}, {"pk": 67, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 21, "vendido": false, "precio": 10000, "sid": "f380203695f11ad82fc47df49070a7ab17457c412784fc00aab3b7d8bc0035b1"}}, {"pk": 68, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 22, "vendido": false, "precio": 10000, "sid": "2fc77066ba2e44f9760d498f0c9534d03a1d77047fd06d285137dcce772a84d2"}}, {"pk": 69, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 23, "vendido": false, "precio": 10000, "sid": "68b921d5033d9f614f3f08984b0eec332fd85c837de65946e335b5049216f108"}}, {"pk": 70, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 24, "vendido": false, "precio": 10000, "sid": "0459bf265f357a9b6ea8e8fa43dcb87136cede4546f3f4b679bf5a0bed6c79f3"}}, {"pk": 71, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 25, "vendido": false, "precio": 10000, "sid": "e8db49b626f01b553ce2162c1ff4acc1210629b01b6d7693c479f1ec1410ce89"}}, {"pk": 72, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 26, "vendido": false, "precio": 10000, "sid": "74d3feb196c1f560228917f34a96ee487480461df7333747c114f5b17d22b7c0"}}, {"pk": 73, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 27, "vendido": false, "precio": 10000, "sid": "4c9e0b7eba5298f9e4714cf7df65a81997e16df351f358e217c1a4c9e299a66f"}}, {"pk": 74, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 28, "vendido": false, "precio": 10000, "sid": "8a6851ea7395f807853b913d6f8c2959206584e2123180bdbcdcd413463ada40"}}, {"pk": 75, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 29, "vendido": false, "precio": 10000, "sid": "413ac275b3c38a0d1b6bc2f4be6230bc5b9e043146aec94d73436d425b77c103"}}, {"pk": 76, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 30, "vendido": false, "precio": 10000, "sid": "5538a360d6edeb75a0cf1040ef67ee34a2e8fb04e4598e4cfa6b1e9f60cf1197"}}, {"pk": 77, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 31, "vendido": false, "precio": 10000, "sid": "1a902d96beee5a9e469c8408d5063dc9a93293c1f4f2a086e944b3bf921fdfe0"}}, {"pk": 78, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 32, "vendido": false, "precio": 10000, "sid": "cdfe6d263074d28bcee68d2a88944d91301f1c5b536d4072603ce9f719fe90ca"}}, {"pk": 79, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 33, "vendido": false, "precio": 10000, "sid": "1ec64a61579bb8c896ea7c5ea4682785a76a66b1e25556579cfd5c6d85cd8c28"}}, {"pk": 80, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 34, "vendido": false, "precio": 10000, "sid": "56e8c7e54a675aa75a532abab9e0a8ae984b6770c651ef8897b7907db9f58976"}}, {"pk": 81, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 35, "vendido": false, "precio": 10000, "sid": "e9b7314e5f672602b24a1374ba25dffec44e59ed192ab0afbbaf6148266faf6a"}}, {"pk": 82, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 36, "vendido": false, "precio": 10000, "sid": "007f227ed543d7bdb53cb7a00ea0157bc601edd5f894e6fff42efad9461ddab9"}}, {"pk": 83, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 37, "vendido": false, "precio": 10000, "sid": "69a64e3b78595d80bcbe30842bcd40f319e8808e6fd4229a4421138d210f84f3"}}, {"pk": 84, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 38, "vendido": false, "precio": 10000, "sid": "c4a1db4349df2263fba55e448bdc4592279cf58f6fa245e39fa15c89b8727954"}}, {"pk": 85, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 39, "vendido": false, "precio": 10000, "sid": "19ea299d7230d37e6053ad7e44a612ba15eabcc1976e7d38bf4c291db6d87acf"}}, {"pk": 86, "model": "venta.pasaje", "fields": {"recorrido": 3, "asiento": 40, "vendido": false, "precio": 10000, "sid": "aa80c15f9c6530305bb6eb9892f511ff612727aa8a9d8734c7ac04818e0417ec"}}, {"pk": 1, "model": "auth.permission", "fields": {"codename": "add_logentry", "name": "Can add log entry", "content_type": 1}}, {"pk": 2, "model": "auth.permission", "fields": {"codename": "change_logentry", "name": "Can change log entry", "content_type": 1}}, {"pk": 3, "model": "auth.permission", "fields": {"codename": "delete_logentry", "name": "Can delete log entry", "content_type": 1}}, {"pk": 4, "model": "auth.permission", "fields": {"codename": "add_permission", "name": "Can add permission", "content_type": 2}}, {"pk": 5, "model": "auth.permission", "fields": {"codename": "change_permission", "name": "Can change permission", "content_type": 2}}, {"pk": 6, "model": "auth.permission", "fields": {"codename": "delete_permission", "name": "Can delete permission", "content_type": 2}}, {"pk": 7, "model": "auth.permission", "fields": {"codename": "add_group", "name": "Can add group", "content_type": 3}}, {"pk": 8, "model": "auth.permission", "fields": {"codename": "change_group", "name": "Can change group", "content_type": 3}}, {"pk": 9, "model": "auth.permission", "fields": {"codename": "delete_group", "name": "Can delete group", "content_type": 3}}, {"pk": 10, "model": "auth.permission", "fields": {"codename": "add_user", "name": "Can add user", "content_type": 4}}, {"pk": 11, "model": "auth.permission", "fields": {"codename": "change_user", "name": "Can change user", "content_type": 4}}, {"pk": 12, "model": "auth.permission", "fields": {"codename": "delete_user", "name": "Can delete user", "content_type": 4}}, {"pk": 13, "model": "auth.permission", "fields": {"codename": "add_contenttype", "name": "Can add content type", "content_type": 5}}, {"pk": 14, "model": "auth.permission", "fields": {"codename": "change_contenttype", "name": "Can change content type", "content_type": 5}}, {"pk": 15, "model": "auth.permission", "fields": {"codename": "delete_contenttype", "name": "Can delete content type", "content_type": 5}}, {"pk": 16, "model": "auth.permission", "fields": {"codename": "add_session", "name": "Can add session", "content_type": 6}}, {"pk": 17, "model": "auth.permission", "fields": {"codename": "change_session", "name": "Can change session", "content_type": 6}}, {"pk": 18, "model": "auth.permission", "fields": {"codename": "delete_session", "name": "Can delete session", "content_type": 6}}, {"pk": 19, "model": "auth.permission", "fields": {"codename": "add_ciudad", "name": "Can add ciudad", "content_type": 7}}, {"pk": 20, "model": "auth.permission", "fields": {"codename": "change_ciudad", "name": "Can change ciudad", "content_type": 7}}, {"pk": 21, "model": "auth.permission", "fields": {"codename": "delete_ciudad", "name": "Can delete ciudad", "content_type": 7}}, {"pk": 22, "model": "auth.permission", "fields": {"codename": "add_conductor", "name": "Can add conductor", "content_type": 8}}, {"pk": 23, "model": "auth.permission", "fields": {"codename": "change_conductor", "name": "Can change conductor", "content_type": 8}}, {"pk": 24, "model": "auth.permission", "fields": {"codename": "delete_conductor", "name": "Can delete conductor", "content_type": 8}}, {"pk": 25, "model": "auth.permission", "fields": {"codename": "add_bus", "name": "Can add bus", "content_type": 9}}, {"pk": 26, "model": "auth.permission", "fields": {"codename": "change_bus", "name": "Can change bus", "content_type": 9}}, {"pk": 27, "model": "auth.permission", "fields": {"codename": "delete_bus", "name": "Can delete bus", "content_type": 9}}, {"pk": 28, "model": "auth.permission", "fields": {"codename": "add_recorrido", "name": "Can add recorrido", "content_type": 10}}, {"pk": 29, "model": "auth.permission", "fields": {"codename": "change_recorrido", "name": "Can change recorrido", "content_type": 10}}, {"pk": 30, "model": "auth.permission", "fields": {"codename": "delete_recorrido", "name": "Can delete recorrido", "content_type": 10}}, {"pk": 31, "model": "auth.permission", "fields": {"codename": "add_pasaje", "name": "Can add pasaje", "content_type": 11}}, {"pk": 32, "model": "auth.permission", "fields": {"codename": "change_pasaje", "name": "Can change pasaje", "content_type": 11}}, {"pk": 33, "model": "auth.permission", "fields": {"codename": "delete_pasaje", "name": "Can delete pasaje", "content_type": 11}}, {"pk": 1, "model": "auth.user", "fields": {"username": "a", "first_name": "", "last_name": "", "is_active": true, "is_superuser": true, "is_staff": true, "last_login": "2014-07-07T01:44:01.006Z", "groups": [], "user_permissions": [], "password": "pbkdf2_sha256$12000$GN0tcCinavjx$WQFjwFe13e4ZD5OPsKXkb8sdzeRuqKqDcH7o+AbID3c=", "email": "a@a.cl", "date_joined": "2014-07-07T01:41:46.397Z"}}, {"pk": 1, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-07-07T01:44:17.539Z", "object_repr": "stgo -- talca\t\tsalida=2014-07-06 21:44:10-04:00", "object_id": "1", "change_message": "", "user": 1, "content_type": 10}}, {"pk": 2, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-07-07T01:44:30.488Z", "object_repr": "talca -- stgo\t\tsalida=2014-07-06 21:44:24-04:00", "object_id": "2", "change_message": "", "user": 1, "content_type": 10}}, {"pk": 3, "model": "admin.logentry", "fields": {"action_flag": 1, "action_time": "2014-07-07T03:11:20.481Z", "object_repr": "Osorno -- Chillan\t\tsalida=2014-07-06 23:11:06-04:00", "object_id": "3", "change_message": "", "user": 1, "content_type": 10}}]
+[
+    {
+        "pk": "Antofagasta",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Arica",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Calama",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Chillan",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Concepcion",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Copiapo",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Coquimbo",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "La serena",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Linares",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Los vilos",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Osorno",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Temuco",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Valdivia",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "Vallenar",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "rancagua",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "stgo",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "talca",
+        "model": "venta.ciudad",
+        "fields": {}
+    },
+    {
+        "pk": "10456253-8",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "jaime"
+        }
+    },
+    {
+        "pk": "11974275-9",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "brayatan"
+        }
+    },
+    {
+        "pk": "1234567-3",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "pepe"
+        }
+    },
+    {
+        "pk": "1246930-3",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "jose"
+        }
+    },
+    {
+        "pk": "4578902-4",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "pablo"
+        }
+    },
+    {
+        "pk": "9632347-7",
+        "model": "venta.conductor",
+        "fields": {
+            "nombre": "roberto"
+        }
+    },
+    {
+        "pk": "BHDE-03",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 42,
+            "conductor": null
+        }
+    },
+    {
+        "pk": "BSJX-43",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 23,
+            "conductor": "1234567-3"
+        }
+    },
+    {
+        "pk": "BVVPW-29",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 41,
+            "conductor": null
+        }
+    },
+    {
+        "pk": "FCLF-63",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 42,
+            "conductor": null
+        }
+    },
+    {
+        "pk": "GHJT-76",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 40,
+            "conductor": null
+        }
+    },
+    {
+        "pk": "HOLA-44",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 40,
+            "conductor": null
+        }
+    },
+    {
+        "pk": "MSLA-75",
+        "model": "venta.bus",
+        "fields": {
+            "capacidad": 40,
+            "conductor": null
+        }
+    },
+    {
+        "pk": 1,
+        "model": "venta.recorrido",
+        "fields": {
+            "hora_inicio": "2014-07-07T01:44:10Z",
+            "destino": "talca",
+            "origen": "stgo",
+            "bus_asignado": "BSJX-43",
+            "hora_llegada": "2014-07-08T01:44:11Z"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "venta.recorrido",
+        "fields": {
+            "hora_inicio": "2014-07-07T01:44:24Z",
+            "destino": "stgo",
+            "origen": "talca",
+            "bus_asignado": "BSJX-43",
+            "hora_llegada": "2014-07-08T01:44:25Z"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "venta.recorrido",
+        "fields": {
+            "hora_inicio": "2014-07-07T03:11:06Z",
+            "destino": "Chillan",
+            "origen": "Osorno",
+            "bus_asignado": "HOLA-44",
+            "hora_llegada": "2014-07-08T03:11:08Z"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 1,
+            "vendido": true,
+            "precio": 10000,
+            "sid": "26f52aa449a1d0e5631f0fcc6a47d31956f5db5a69b492ef3d072578c7484bf4"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 2,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "65844b9d71e46fc71951e7d8084ff7ae635aa8dd31da27fb86f01dfdf4a6b022"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 3,
+            "vendido": true,
+            "precio": 10000,
+            "sid": "7ed26155c83291fa9097c7ce2c234811cf47083e9d2ef5f700a4c1813a1869d2"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 4,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "048b5191aa23827e425fbe6515d0c076dc51c599eff804403c87dc2aec04c3c9"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 5,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "8d5e28504f4e9d32ecc1ea300cf0a5a70437db05f4929c58e603eb7c73bef248"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 6,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "091fe7855616a7aa1b5579ae1aac83774caea54406aaa476b0336d5cf65dcab6"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 7,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "abf5e72ec60e4904ec7f76dbd123ddca80c00e074bbd4cedf53d8bfcdc2208a9"
+        }
+    },
+    {
+        "pk": 8,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 8,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "5139e0dda65fed63c64d663c7231580b1474617ef48f5b377bf3c4d8aaa031f3"
+        }
+    },
+    {
+        "pk": 9,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 9,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "804bd814798a4ea198859c875047883ff5e6c70efbb2a35c5ab137e65dc63c66"
+        }
+    },
+    {
+        "pk": 10,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 10,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "fac0e93c73be66e783c6af1d7ac98462217af26f68f7c3ac2d8d98208e40c7be"
+        }
+    },
+    {
+        "pk": 11,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 11,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "75e0d360ea2193a38d7eeb554547525c3c2d2d44db0d159cad2fb1b0c35c84c5"
+        }
+    },
+    {
+        "pk": 12,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 12,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "48b87c9f3b591107b358f43ce6565b0520a63bec3c3a1e3b1681904dfd946063"
+        }
+    },
+    {
+        "pk": 13,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 13,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "77f837f7eebe4d65c54d5e92f724cdb303e40168b7b861acf1673a0b42f3afca"
+        }
+    },
+    {
+        "pk": 14,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 14,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "05781cecda8cf77edf6152185cb75c9bee5e0311d4695727a15e0c56a5ebf097"
+        }
+    },
+    {
+        "pk": 15,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 15,
+            "vendido": true,
+            "precio": 10000,
+            "sid": "3102ac102b91f3296ff7ceeefe154ede1ffcd518500f39e90c9d4a500f9df362"
+        }
+    },
+    {
+        "pk": 16,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 16,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "ce3af59b6075cbc6ebf97ead2281dff3af1fae645790473074b76a34252dcccc"
+        }
+    },
+    {
+        "pk": 17,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 17,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "1d41ca7a35194fcca11007566e855152cec87b274d19157eff0c6365ffb65c20"
+        }
+    },
+    {
+        "pk": 18,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 18,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "d219dfd6c7f80b046765924c2e5446f74e6086ddf8b4961df50ab2a6b4496f6b"
+        }
+    },
+    {
+        "pk": 19,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 19,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "453eef40c2c50f20f89fe30ae4b280f4bac2487b61eea9950977e593eb914d75"
+        }
+    },
+    {
+        "pk": 20,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 20,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "4f22c6c6622a0ba4ca30d0d2c108907e5b1a83ad1247ea4454f3f0cda8076f0a"
+        }
+    },
+    {
+        "pk": 21,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 21,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "2b17756db629d98499d61eafdcbae6e4ddb6552c41cbfdab5dc2bbfbd4de19c2"
+        }
+    },
+    {
+        "pk": 22,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 22,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "57917e84e27c4a1c2497e4e09ad7d757db121e4941e60853010eb173bdf45df3"
+        }
+    },
+    {
+        "pk": 23,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 1,
+            "asiento": 23,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "21397806a88cfed559ba2e3e8c352b4935709229485f9f2dd4291f8b25c3986f"
+        }
+    },
+    {
+        "pk": 24,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 1,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "7084c4ab9302c8bb832da962dc31c9a798d64b9bea368b9ac4631fc46b025dc6"
+        }
+    },
+    {
+        "pk": 25,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 2,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "50e23c12c6ccfaaee8435f02314747b80ed7b094f8787fcb06fc9a4dcb630b46"
+        }
+    },
+    {
+        "pk": 26,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 3,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "ba6f96765282e86db86b1bb7ad9d0063b9a2b8914abe107bf5a1e8b3e9376fa3"
+        }
+    },
+    {
+        "pk": 27,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 4,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "46ef9fa05a408e12c5c80861e04a8dc6ca22b5554246da8c56594bc80386aefa"
+        }
+    },
+    {
+        "pk": 28,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 5,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "ba3da7fa502b5eaa1730ea68b8ac00bc2f5fd1ebf7f2ef8d4ef4800ab3a1c26e"
+        }
+    },
+    {
+        "pk": 29,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 6,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "401b077b2e9bf524416995ec436d0f8d54cbd6e38eb505c909f4e2a4e8cafa22"
+        }
+    },
+    {
+        "pk": 30,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 7,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "d018aba1f373f373cdb27a777956afc4a4a96a61aa5d93a92463f76240c6330e"
+        }
+    },
+    {
+        "pk": 31,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 8,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "c2f4a2ceb143dcf52d641bb7c6a84db89a424ade83737a272e9bdb829f448e69"
+        }
+    },
+    {
+        "pk": 32,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 9,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "c609f430939ae246ac69845e3787a4fc72e871981d264b3fc6a812c054202a3d"
+        }
+    },
+    {
+        "pk": 33,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 10,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "5bf27c229e326d7d32cabb6bbd415cf2a12ede9ce48541d5fa83d9340424b8eb"
+        }
+    },
+    {
+        "pk": 34,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 11,
+            "vendido": true,
+            "precio": 10000,
+            "sid": "52d155c0e37f501fffb515243cddaa736378c362302ffe51e0b6fb87de845357"
+        }
+    },
+    {
+        "pk": 35,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 12,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "0db3f82c4b27f244fcbe58580eba7ca85056340870c1224513a3afad781d759a"
+        }
+    },
+    {
+        "pk": 36,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 13,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "1d6faa657e9a7373f9a68bde1fc94b92756c1f4e3bc526fc583f6c0d9e260708"
+        }
+    },
+    {
+        "pk": 37,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 14,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "b51d648b5c682a17d7f09775dac6ccaaeba0bdf44311aab75ac0ef8c188ad6c9"
+        }
+    },
+    {
+        "pk": 38,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 15,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "b19bcaad5dda80fc2e67cca154d83676e4e4df38feea797ead8e8dde5d53bb91"
+        }
+    },
+    {
+        "pk": 39,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 16,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "5692f7670d7a58d1973788ee2c2d1041d860e41b209f9f26b4c8095828ad8f51"
+        }
+    },
+    {
+        "pk": 40,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 17,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "52568265019067c1b3765709989a2d2ef0721dd4d6e8166140cbc2deac9efc45"
+        }
+    },
+    {
+        "pk": 41,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 18,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "e638eec7f0a8b6c248f3702b20348409c3eae76c0fc1a23ba86e294302a80120"
+        }
+    },
+    {
+        "pk": 42,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 19,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "8a8b9733af53927cb1e20a83ed5d1efcaa02c34262af6bf5926831bfa45bc54c"
+        }
+    },
+    {
+        "pk": 43,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 20,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "55f981e4088495ab9c7d180edc03522afa5ea342d3eb6753f6d538fc847199d3"
+        }
+    },
+    {
+        "pk": 44,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 21,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "79828a56111f4cc4f717b1b5c1ca3af999d3ff77b5c6423ab18fb7b0af6fd771"
+        }
+    },
+    {
+        "pk": 45,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 22,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "13e5d99c7bfbe172dedcbc0af73183b479a135343f382d1e66b370a529759e21"
+        }
+    },
+    {
+        "pk": 46,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 2,
+            "asiento": 23,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "9705172e3e495c14b523e6175adac1855014ff3f73f0bd3e8b4f3084cc37a1a9"
+        }
+    },
+    {
+        "pk": 47,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 1,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "4e572c21aeae4082ccca97a39d1f2be91b231fe74d9d81debf44606f81306368"
+        }
+    },
+    {
+        "pk": 48,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 2,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "b4405b222fa98570a15f6fb6263494b5e70a74b37456ec6752020a82cd1d960e"
+        }
+    },
+    {
+        "pk": 49,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 3,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "e6ff53a21a2b5e6d4b88b95a1153604e2e8aef0f4afa0141a52c5a9c6f8582f6"
+        }
+    },
+    {
+        "pk": 50,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 4,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "cf308c24c44d90c73184cfefad5fd7b968b10727cd32e56563479b149ede7877"
+        }
+    },
+    {
+        "pk": 51,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 5,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "6ab56f24c06a85e47e08884f9053278d78257da46308a00a9d719f424d1d454b"
+        }
+    },
+    {
+        "pk": 52,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 6,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "68cd6ed8e27f9ff9bf4e5c7d743a36277784f061e38742ba5d65f669e7917d53"
+        }
+    },
+    {
+        "pk": 53,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 7,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "471a58b5515a1c025a3554f482a13edd3bbeb109eaa562af2f9c0ee92223b81c"
+        }
+    },
+    {
+        "pk": 54,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 8,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "aa0a6c344f4e282489fdd047f098e9b93efdb6cee370a81fc7d11dd7bf732a39"
+        }
+    },
+    {
+        "pk": 55,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 9,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "60356bc428857f371a46b4e9e8b3ad38302fe77e366dad7df5e50dd132ffef8a"
+        }
+    },
+    {
+        "pk": 56,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 10,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "59e69d380852aa2752d55ac99a7ef637c5a76b3b42450396126783e8478017a4"
+        }
+    },
+    {
+        "pk": 57,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 11,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "6038bc866d70975750f24d01ee307f83d2611ff9070a52c143adaff96b51db10"
+        }
+    },
+    {
+        "pk": 58,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 12,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "1d022e04184ac6ffdec7a414aeded3dde95ff03867b2a33829f86eb5ccab22d9"
+        }
+    },
+    {
+        "pk": 59,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 13,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "7f3c79b385484f4a5a57a3129e08cfdc428806c7de30d128c8fc19f83f3c4c49"
+        }
+    },
+    {
+        "pk": 60,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 14,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "bb9c20e9d1bda5eb498aa2700ce80ab90820aa07e692fb5aaecbd65968770e9d"
+        }
+    },
+    {
+        "pk": 61,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 15,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "f30edb3bdd4ee62f4922dcfe6b9dbd8b80e71aac7d26e6b8cb27894c14c0f103"
+        }
+    },
+    {
+        "pk": 62,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 16,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "48e109c4fe164b393a6c33f515e531a2c67eb19305133f70584c9e776bd34688"
+        }
+    },
+    {
+        "pk": 63,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 17,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "86477a394ad6c10dec65caca5f85b945ab8894209fd56f6beef90ca3c451ce0d"
+        }
+    },
+    {
+        "pk": 64,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 18,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "cd96bbd1fc49988bfcfa5ca07cdf839130044b32c26d57ced1b2d8a631e4bafa"
+        }
+    },
+    {
+        "pk": 65,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 19,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "b65e1b0dba182ff0a609fe8b7e31b58bd981836dbc94f523a7b1dd9ca7a2a913"
+        }
+    },
+    {
+        "pk": 66,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 20,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "a97fcf209fe8bac65eab8e61559cc330bd947377f40458745d0c28e03be8c3fd"
+        }
+    },
+    {
+        "pk": 67,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 21,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "f380203695f11ad82fc47df49070a7ab17457c412784fc00aab3b7d8bc0035b1"
+        }
+    },
+    {
+        "pk": 68,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 22,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "2fc77066ba2e44f9760d498f0c9534d03a1d77047fd06d285137dcce772a84d2"
+        }
+    },
+    {
+        "pk": 69,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 23,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "68b921d5033d9f614f3f08984b0eec332fd85c837de65946e335b5049216f108"
+        }
+    },
+    {
+        "pk": 70,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 24,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "0459bf265f357a9b6ea8e8fa43dcb87136cede4546f3f4b679bf5a0bed6c79f3"
+        }
+    },
+    {
+        "pk": 71,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 25,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "e8db49b626f01b553ce2162c1ff4acc1210629b01b6d7693c479f1ec1410ce89"
+        }
+    },
+    {
+        "pk": 72,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 26,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "74d3feb196c1f560228917f34a96ee487480461df7333747c114f5b17d22b7c0"
+        }
+    },
+    {
+        "pk": 73,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 27,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "4c9e0b7eba5298f9e4714cf7df65a81997e16df351f358e217c1a4c9e299a66f"
+        }
+    },
+    {
+        "pk": 74,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 28,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "8a6851ea7395f807853b913d6f8c2959206584e2123180bdbcdcd413463ada40"
+        }
+    },
+    {
+        "pk": 75,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 29,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "413ac275b3c38a0d1b6bc2f4be6230bc5b9e043146aec94d73436d425b77c103"
+        }
+    },
+    {
+        "pk": 76,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 30,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "5538a360d6edeb75a0cf1040ef67ee34a2e8fb04e4598e4cfa6b1e9f60cf1197"
+        }
+    },
+    {
+        "pk": 77,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 31,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "1a902d96beee5a9e469c8408d5063dc9a93293c1f4f2a086e944b3bf921fdfe0"
+        }
+    },
+    {
+        "pk": 78,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 32,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "cdfe6d263074d28bcee68d2a88944d91301f1c5b536d4072603ce9f719fe90ca"
+        }
+    },
+    {
+        "pk": 79,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 33,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "1ec64a61579bb8c896ea7c5ea4682785a76a66b1e25556579cfd5c6d85cd8c28"
+        }
+    },
+    {
+        "pk": 80,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 34,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "56e8c7e54a675aa75a532abab9e0a8ae984b6770c651ef8897b7907db9f58976"
+        }
+    },
+    {
+        "pk": 81,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 35,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "e9b7314e5f672602b24a1374ba25dffec44e59ed192ab0afbbaf6148266faf6a"
+        }
+    },
+    {
+        "pk": 82,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 36,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "007f227ed543d7bdb53cb7a00ea0157bc601edd5f894e6fff42efad9461ddab9"
+        }
+    },
+    {
+        "pk": 83,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 37,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "69a64e3b78595d80bcbe30842bcd40f319e8808e6fd4229a4421138d210f84f3"
+        }
+    },
+    {
+        "pk": 84,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 38,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "c4a1db4349df2263fba55e448bdc4592279cf58f6fa245e39fa15c89b8727954"
+        }
+    },
+    {
+        "pk": 85,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 39,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "19ea299d7230d37e6053ad7e44a612ba15eabcc1976e7d38bf4c291db6d87acf"
+        }
+    },
+    {
+        "pk": 86,
+        "model": "venta.pasaje",
+        "fields": {
+            "recorrido": 3,
+            "asiento": 40,
+            "vendido": false,
+            "precio": 10000,
+            "sid": "aa80c15f9c6530305bb6eb9892f511ff612727aa8a9d8734c7ac04818e0417ec"
+        }
+    }
+]
