@@ -47,11 +47,14 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'djangosecure.middleware.SecurityMiddleware',
 )
 
 ROOT_URLCONF = 'ventapasajes.urls'
 
 WSGI_APPLICATION = 'ventapasajes.wsgi.application'
+
+SECURE_CONTENT_TYPE_NOSNIFF = True
 
 
 # Database
