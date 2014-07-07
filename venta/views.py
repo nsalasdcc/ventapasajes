@@ -38,12 +38,12 @@ def buscar(request):
     return render(request, "venta/buscar.html", ctx)
 
 
-def confirmar(request, id_recorrido, id_asiento):
+def confirmar(request, id_recorrido, sid_asiento):
     recorrido = Recorrido.objects.get(id_recorrido=id_recorrido)
-    asiento = Pasaje.objects.get(id=id_asiento)
+    asiento = Pasaje.objects.get(sid=sid_asiento)
 
     if asiento.recorrido_id != recorrido.id_recorrido:
-        raise ValidationError('Invalid value: %s' % id_asiento)
+        raise ValidationError('Invalid value: %s' % sid_asiento)
 
     ctx = {
         'recorrido': recorrido,

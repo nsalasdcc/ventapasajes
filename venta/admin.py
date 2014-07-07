@@ -1,6 +1,8 @@
 from django.contrib import admin
 from venta.models import Recorrido, Pasaje
 
+import hashlib
+
 
 class RecorridoAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -20,6 +22,16 @@ class RecorridoAdmin(admin.ModelAdmin):
                 pasaje.asiento = i + 1
                 pasaje.recorrido = obj
                 pasaje.vendido = False
+
+                pasaje.save()
+
+                hasho = hashlib.sha256()
+
+                hasho.update(str(pasaje.id))
+                hasho.update('--')
+                hasho.update(str(pasaje.recorrido_id))
+
+                pasaje.sid = hasho.hexdigest()
                 pasaje.save()
         else:
             Pasaje.objects.filter(recorrido=obj).delete()

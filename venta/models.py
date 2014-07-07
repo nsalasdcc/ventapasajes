@@ -42,3 +42,4 @@ class Pasaje(models.Model):
     asiento = models.IntegerField()
     precio = models.IntegerField()
     vendido = models.BooleanField()
+    sid = models.CharField(max_length=80, null=True)

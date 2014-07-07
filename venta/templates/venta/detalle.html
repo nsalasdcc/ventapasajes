@@ -19,7 +19,7 @@
                     <div class="col-lg-1{% if primero %} col-lg-offset-4{% endif %}">
                         <button type="button"
                                 class="btn btn-primary btn-lg{% if asiento.vendido %} disabled{% endif %}"
-                                onclick="location.href='{% url 'confirmar' recorrido.id_recorrido asiento.id %}'">
+                                onclick="location.href='{% url 'confirmar' recorrido.id_recorrido asiento.sid %}'">
                             {{ asiento.asiento }}
                         </button>
                     </div>
