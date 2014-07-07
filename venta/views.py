@@ -52,9 +52,9 @@ def confirmar(request, id_recorrido, sid_asiento):
     return render(request, "venta/confirmar.html", ctx)
 
 
-def vender(request, id_pasaje):
+def vender(request, sid_asiento):
     try:
-        pasaje = Pasaje.objects.get(id=id_pasaje)
+        pasaje = Pasaje.objects.get(sid=sid_asiento)
         if pasaje.vendido:
             raise IntegrityError('Pasaje ya vendido')
         pasaje.vendido = True
@@ -68,25 +68,24 @@ def vender(request, id_pasaje):
         redirect['Content-Disposition'] = 'attachment; filename=boleto.pdf'
         p = canvas.Canvas(redirect)
         w, h = letter
-        p.drawString(100,h-50, "Buses El Pintor")
-        p.drawString(100,h-80, "Detalles de su Pasaje:")
-        p.drawString(100,h-110,"Origen:")
-        p.drawString(100+150,h-110, str(pasaje.recorrido.origen))
-        p.drawString(100,h-140,"Hora salida:")
-        p.drawString(100+150,h-140,str(pasaje.recorrido.hora_inicio))
-        p.drawString(100,h-170,"Destino:")
-        p.drawString(100+150,h-170,str(pasaje.recorrido.destino))
-        p.drawString(100,h-200,"Hora llegada:")
-        p.drawString(100+150,h-200,str(pasaje.recorrido.hora_llegada))
-        p.drawString(100,h-230,"Bus asignado:")
-        p.drawString(100+150,h-230,str(pasaje.recorrido.bus_asignado.patente))
-        p.drawString(100,h-260,"Asiento")
-        p.drawString(100+150,h-260,str(pasaje.asiento))
-        p.drawString(100,h-350,"Gracias por preferirnos!")
-        p.drawString(100,h-370,"Disfrute su viaje!")
+        p.drawString(100, h-50, "Buses El Pintor")
+        p.drawString(100, h-80, "Detalles de su Pasaje:")
+        p.drawString(100, h-110, "Origen:")
+        p.drawString(100+150, h-110, str(pasaje.recorrido.origen))
+        p.drawString(100, h-140, "Hora salida:")
+        p.drawString(100+150, h-140, str(pasaje.recorrido.hora_inicio))
+        p.drawString(100, h-170, "Destino:")
+        p.drawString(100+150, h-170, str(pasaje.recorrido.destino))
+        p.drawString(100, h-200, "Hora llegada:")
+        p.drawString(100+150, h-200, str(pasaje.recorrido.hora_llegada))
+        p.drawString(100, h-230, "Bus asignado:")
+        p.drawString(100+150, h-230, str(pasaje.recorrido.bus_asignado.patente))
+        p.drawString(100, h-260, "Asiento")
+        p.drawString(100+150, h-260, str(pasaje.asiento))
+        p.drawString(100, h-350, "Gracias por preferirnos!")
+        p.drawString(100, h-370, "Disfrute su viaje!")
         p.save()
         return redirect
-
 
     except IntegrityError:
         #TODO: Vista incorrecta!
@@ -95,6 +94,7 @@ def vender(request, id_pasaje):
 
 def cambiar(request):
     return render(request, "venta/cambiar.html")
+
 
 def cambiacion(request):
     id_pasaje = request.GET.get("id", "")
@@ -108,9 +108,10 @@ def cambiacion(request):
     ctx = {
         'asiento': pasaje,
         'recorrido': recorrido
-        }
+    }
 
     return render(request, "venta/cambiacion.html", ctx)
+
 
 def do_cambiar(request, id_pasaje):
     pasaje = get_object_or_404(Pasaje, id=id_pasaje)
@@ -125,7 +126,6 @@ def do_cambiar(request, id_pasaje):
     redirect = HttpResponseRedirect(reverse('index'))
 
     return redirect
-
 
 
 def devolver(request):
