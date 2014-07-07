@@ -4,16 +4,19 @@ from django.core.urlresolvers import reverse
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.http import require_GET, require_POST
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 from reportlab.lib.pagesizes import letter
 from venta.models import Recorrido, Pasaje
 
 
+@require_GET
 def index(request):
     return render(request, "venta/index.html")
 
 
+@require_GET
 def detalle(request, id_recorrido):
     recorrido = get_object_or_404(Recorrido, id_recorrido=id_recorrido)
     pasajes = recorrido.pasaje_set.all()
@@ -38,6 +41,7 @@ def buscar(request):
     return render(request, "venta/buscar.html", ctx)
 
 
+@require_GET
 def confirmar(request, id_recorrido, sid_asiento):
     recorrido = Recorrido.objects.get(id_recorrido=id_recorrido)
     asiento = Pasaje.objects.get(sid=sid_asiento)
@@ -52,6 +56,7 @@ def confirmar(request, id_recorrido, sid_asiento):
     return render(request, "venta/confirmar.html", ctx)
 
 
+@require_POST
 def vender(request, sid_asiento):
     try:
         pasaje = Pasaje.objects.get(sid=sid_asiento)
@@ -92,10 +97,12 @@ def vender(request, sid_asiento):
         return render(request, "venta/confirmar.html")
 
 
+@require_GET
 def cambiar(request):
     return render(request, "venta/cambiar.html")
 
 
+@require_GET
 def cambiacion(request):
     sid_pasaje = request.GET.get("sid", "")
 
@@ -113,6 +120,7 @@ def cambiacion(request):
     return render(request, "venta/cambiacion.html", ctx)
 
 
+@require_POST
 def do_cambiar(request, sid_pasaje):
     pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
@@ -128,10 +136,12 @@ def do_cambiar(request, sid_pasaje):
     return redirect
 
 
+@require_GET
 def devolver(request):
     return render(request, "venta/devolver.html")
 
 
+@require_GET
 def devolucion(request):
     sid_pasaje = request.GET.get("sid", "")
 
@@ -149,6 +159,7 @@ def devolucion(request):
     return render(request, "venta/devolucion.html", ctx)
 
 
+@require_POST
 def do_devolver(request, sid_asiento):
     pasaje = get_object_or_404(Pasaje, sid=sid_asiento)
 
