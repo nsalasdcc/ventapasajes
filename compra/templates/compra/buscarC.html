@@ -1,4 +1,4 @@
-{% extends 'venta/main.html' %}
+{% extends 'compra/mainC.html' %}
 
 {% block titulo %}Lista de Recorridos{% endblock %}
 
@@ -6,7 +6,7 @@
 {% if lista_recorridos %}
 <ul>
     {% for recorrido in lista_recorridos %}
-    <li><a href="{% url 'detalle' recorrido.id_recorrido %}">{{ recorrido|escape }}</a></li>
+    <li><a href="{% url 'detalleC' recorrido.id_recorrido %}">{{ recorrido|escape }}</a></li>
     {% endfor %}
 </ul>
 
