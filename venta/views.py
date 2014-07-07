@@ -97,9 +97,9 @@ def cambiar(request):
 
 
 def cambiacion(request):
-    id_pasaje = request.GET.get("id", "")
+    sid_pasaje = request.GET.get("sid", "")
 
-    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+    pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
     if not pasaje.vendido:
         raise IntegrityError("Pasaje no se ha vendido. No se puede cambiar")
@@ -113,8 +113,8 @@ def cambiacion(request):
     return render(request, "venta/cambiacion.html", ctx)
 
 
-def do_cambiar(request, id_pasaje):
-    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+def do_cambiar(request, sid_pasaje):
+    pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
     if not pasaje.vendido:
         raise IntegrityError("Pasaje no se ha vendido. No se puede cambiar")
@@ -122,7 +122,7 @@ def do_cambiar(request, id_pasaje):
 
     pasaje.save()
 
-    messages.success(request, "Eliga un nuevo pasaje para su cambio")
+    messages.success(request, "Elija un nuevo pasaje para su cambio")
     redirect = HttpResponseRedirect(reverse('index'))
 
     return redirect
@@ -133,9 +133,9 @@ def devolver(request):
 
 
 def devolucion(request):
-    id_pasaje = request.GET.get("id", "")
+    sid_pasaje = request.GET.get("sid", "")
 
-    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+    pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
     if not pasaje.vendido:
         raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
@@ -144,13 +144,13 @@ def devolucion(request):
     ctx = {
         'asiento': pasaje,
         'recorrido': recorrido
-        }
+    }
 
     return render(request, "venta/devolucion.html", ctx)
 
 
-def do_devolver(request, id_pasaje):
-    pasaje = get_object_or_404(Pasaje, id=id_pasaje)
+def do_devolver(request, sid_asiento):
+    pasaje = get_object_or_404(Pasaje, sid=sid_asiento)
 
     if not pasaje.vendido:
         raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
