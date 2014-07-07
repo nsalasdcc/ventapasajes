@@ -1,0 +1,7 @@
+El parámetro DEBUG en setting.py se utiliza con el valor True para el modo desarrollo,
+pero para modo producción este debiese estar en False, para esto es necesario
+incluir en ALLOWED_Hosts una lista de sitios a los que se redirigirá al usuario
+cuando ocurra un error, es decir, cuando ocurra el error 500 y posible mostrar
+una página con un mensaje del estilo "estamos trabajando para solucionar el error"
+Para efectos de esta tarea no es posible utilizar esto, ya que se requiere un servidor
+más robusto para la correcta implementación.
