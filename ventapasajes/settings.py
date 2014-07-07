@@ -56,6 +56,8 @@ WSGI_APPLICATION = 'ventapasajes.wsgi.application'
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 
+SESSION_COOKIE_HTTPONLY = True
+
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
