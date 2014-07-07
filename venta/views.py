@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET, require_POST
 from reportlab.pdfgen import canvas
@@ -46,8 +46,8 @@ def confirmar(request, id_recorrido, sid_asiento):
     recorrido = Recorrido.objects.get(id_recorrido=id_recorrido)
     asiento = Pasaje.objects.get(sid=sid_asiento)
 
-    if asiento.recorrido_id != recorrido.id_recorrido:
-        raise ValidationError('Invalid value: %s' % sid_asiento)
+    if asiento.vendido:
+        raise Http404
 
     ctx = {
         'recorrido': recorrido,
@@ -61,7 +61,7 @@ def vender(request, sid_asiento):
     try:
         pasaje = Pasaje.objects.get(sid=sid_asiento)
         if pasaje.vendido:
-            raise IntegrityError('Pasaje ya vendido')
+            raise Http404
         pasaje.vendido = True
 
         pasaje.save()
@@ -109,7 +109,7 @@ def cambiacion(request):
     pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
     if not pasaje.vendido:
-        raise IntegrityError("Pasaje no se ha vendido. No se puede cambiar")
+        raise Http404
 
     recorrido = pasaje.recorrido
     ctx = {
@@ -125,7 +125,7 @@ def do_cambiar(request, sid_asiento):
     pasaje = get_object_or_404(Pasaje, sid=sid_asiento)
 
     if not pasaje.vendido:
-        raise IntegrityError("Pasaje no se ha vendido. No se puede cambiar")
+        raise Http404
     pasaje.vendido = False
 
     pasaje.save()
@@ -148,7 +148,7 @@ def devolucion(request):
     pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
 
     if not pasaje.vendido:
-        raise IntegrityError("Pasaje no se ha vendido. No se puede devolver")
+        raise Http404
 
     recorrido = pasaje.recorrido
     ctx = {

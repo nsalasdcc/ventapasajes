@@ -2,7 +2,7 @@ from django.contrib import messages
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.db import IntegrityError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, Http404
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_GET, require_POST
 from reportlab.pdfgen import canvas
@@ -48,7 +48,7 @@ def confirmarC(request, id_recorrido, sid_pasaje):
     asiento = Pasaje.objects.get(sid=sid_pasaje)
 
     if asiento.recorrido_id != recorrido.id_recorrido:
-        raise ValidationError('Invalid value: %s' % sid_pasaje)
+        raise Http404
 
     ctx = {
         'recorrido': recorrido,
@@ -62,7 +62,7 @@ def comprar(request, sid_pasaje):
     try:
         pasaje = Pasaje.objects.get(sid=sid_pasaje)
         if pasaje.vendido:
-            raise IntegrityError('Pasaje ya vendido')
+            raise Http404
         pasaje.vendido = True
 
         pasaje.save()
