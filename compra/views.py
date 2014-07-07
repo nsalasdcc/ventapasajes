@@ -4,16 +4,19 @@ from django.core.urlresolvers import reverse
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
+from django.views.decorators.http import require_GET, require_POST
 from reportlab.pdfgen import canvas
 from django.http import HttpResponse
 from reportlab.lib.pagesizes import letter
 from venta.models import Recorrido, Pasaje
 
 
+@require_GET
 def indice(request):
     return render(request, "compra/indice.html")
 
 
+@require_GET
 def detalleC(request, id_recorrido):
     recorrido = get_object_or_404(Recorrido, id_recorrido=id_recorrido)
     pasajes = recorrido.pasaje_set.all()
@@ -26,6 +29,7 @@ def detalleC(request, id_recorrido):
     return render(request, "compra/detalleC.html", context)
 
 
+@require_GET
 def buscarC(request):
     origen = request.GET.get("origen", "")
     destino = request.GET.get("destino", "")
@@ -38,12 +42,13 @@ def buscarC(request):
     return render(request, "compra/buscarC.html", ctx)
 
 
-def confirmarC(request, id_recorrido, id_asiento):
+@require_GET
+def confirmarC(request, id_recorrido, sid_pasaje):
     recorrido = Recorrido.objects.get(id_recorrido=id_recorrido)
-    asiento = Pasaje.objects.get(id=id_asiento)
+    asiento = Pasaje.objects.get(sid=sid_pasaje)
 
     if asiento.recorrido_id != recorrido.id_recorrido:
-        raise ValidationError('Invalid value: %s' % id_asiento)
+        raise ValidationError('Invalid value: %s' % sid_pasaje)
 
     ctx = {
         'recorrido': recorrido,
@@ -52,9 +57,10 @@ def confirmarC(request, id_recorrido, id_asiento):
     return render(request, "compra/confirmarC.html", ctx)
 
 
-def comprar(request, id_pasaje):
+@require_POST
+def comprar(request, sid_pasaje):
     try:
-        pasaje = Pasaje.objects.get(id=id_pasaje)
+        pasaje = Pasaje.objects.get(sid=sid_pasaje)
         if pasaje.vendido:
             raise IntegrityError('Pasaje ya vendido')
         pasaje.vendido = True
@@ -86,7 +92,6 @@ def comprar(request, id_pasaje):
         p.drawString(100,h-370,"Disfrute su viaje!")
         p.save()
         return redirect
-
 
     except IntegrityError:
         #TODO: Vista incorrecta!

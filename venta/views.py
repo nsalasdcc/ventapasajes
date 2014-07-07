@@ -121,8 +121,8 @@ def cambiacion(request):
 
 
 @require_POST
-def do_cambiar(request, sid_pasaje):
-    pasaje = get_object_or_404(Pasaje, sid=sid_pasaje)
+def do_cambiar(request, sid_asiento):
+    pasaje = get_object_or_404(Pasaje, sid=sid_asiento)
 
     if not pasaje.vendido:
         raise IntegrityError("Pasaje no se ha vendido. No se puede cambiar")
